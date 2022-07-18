@@ -34,13 +34,13 @@ public class BasicPlayerMovement : MonoBehaviour
     //public float groundDistance = 0.4f;
     //public LayerMask groundMask;
     //bool isGrounded;
-
+   
     private void Awake()
     {
         
     }
 
-
+    
     void Update()
     {
         //Jump

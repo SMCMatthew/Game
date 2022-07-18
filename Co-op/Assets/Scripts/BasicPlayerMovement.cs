@@ -30,10 +30,10 @@ public class BasicPlayerMovement : MonoBehaviour
     //[Space()]
 
     //[Header("Jump")]
-    //public Transform groundCheck;
-    //public float groundDistance = 0.4f;
-    //public LayerMask groundMask;
-    //bool isGrounded;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    bool isGrounded;
 
     private void Awake()
     {
@@ -44,11 +44,11 @@ public class BasicPlayerMovement : MonoBehaviour
     void Update()
     {
         //Jump
-        //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        //if (isGrounded && velocity.y < 0)
-        //{
-        //    velocity.y = -2f;
-        //}
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         Vector3 move = (transform.right * x + transform.forward * z).normalized;
